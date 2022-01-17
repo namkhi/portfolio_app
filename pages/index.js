@@ -1,4 +1,4 @@
-import { Container, Box, Text, Heading, Image, Grid, GridItem, Link, useClipboard, IconButton, Spacer, Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverCloseButton, PopoverHeader} from '@chakra-ui/react'
+import { Container, Box, Text, Heading, Image, Grid, GridItem, Link, useClipboard, IconButton, Spacer, Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverHeader, Flex} from '@chakra-ui/react'
 import { ExternalLinkIcon, CopyIcon } from '@chakra-ui/icons'
 import React, { useState } from 'react'
 import Section from '../components/section'
@@ -42,8 +42,8 @@ export default function Home() {
         </Heading>
              
         <Text pt="2">
-          From a young age, my mind has always been filled with creative ideas but I was never satisfied by any one medium.  I was growing frustrated while realizing these ideas because
-          there was always a side of me that wanted to incorporate my innovative ideas as well.  Programming became the medium to expressing these ideas together and I&apos;ve been working hard 
+          From a young age, my mind was always filled with creative ideas but I was never satisfied by any one medium.  I grew frustrated while realizing these ideas because
+          there was always a side of me that wanted to incorporate my innovative ideas as well.  Programming became the medium for expressing these passions and I&apos;ve been working hard 
           to become a full stack developer ever since.
           <br/> <br/>
           Ultimately, I would like to translate my skills in full stack development and enter the world of machine learning when my technical skills have improved.
@@ -100,6 +100,18 @@ export default function Home() {
               Designed and implemented the application with a small team to increase the efficiency of retail workers as they manage the sales of perishable items, instead of having workers perform the tasks manually.
               </Text>
             </GridItem>
+
+            <GridItem bg={{md:"#f3f1f1", base:"white"}} borderRadius="lg" p="2" display={{md:'flex-box'}}>
+              <Heading as="h2" size="sm">
+                Personal Project: Portfolio Webpage
+              </Heading>
+                <Heading as="h3" size="xs" pt="2" pb="3" color="hsl(256, 28%, 51%)">
+                  NextJS, ChakraUI, Framer Motion
+                </Heading>
+                <Text>
+                  A little project to explore NextJS and front end tech.  In the future, I hope to explore ThreeJS and Blender models with the goal of integrating it into the site.
+                </Text>
+            </GridItem>
           </Grid>
 
           <Box align="center">
@@ -109,14 +121,15 @@ export default function Home() {
         </Section>
 
         <Section delay={0.3}>
+        <Box pt="1" display={{md:'flex-box'}}>
           <Heading as="h3" size="md" variant="section-title" bg="#91D0D7" borderRadius="md" p="2" boxShadow="md">
             Contacts
           </Heading>
 
-          <Box pt="2" display="flex">
+          <Box pt="2" display={{md:"flex", base:"flex-box"}}>
 
-              <Text p="1" value={ value }>
-                Email: chiutran.joseph@gmail.com 
+              <Text value={ value }>
+                Email: chiutran.joseph@gmail.com
               </Text> 
               <Spacer/> 
               <Popover placement="top" matchWidth>
@@ -130,15 +143,20 @@ export default function Home() {
               </Popover>
             </Box>
             
-            <Box pt="2" display="flex">
-              <Text p="1">LinkedIn:&nbsp;<Link href="https://www.linkedin.com/in/joseph-chiu-tran/" isExternal color="hsl(256, 28%, 42%)"><a>https://www.linkedin.com/in/joseph-chiu-tran/</a></Link></Text> <Spacer/>
+            <Box pt="2" display={{md:"flex", base:"flex-box"}}>
+              <Text>LinkedIn:&nbsp;
+                <Link href="https://www.linkedin.com/in/joseph-chiu-tran/" isExternal color="hsl(256, 28%, 42%)">
+                  <a>https://www.linkedin.com/in/joseph-chiu-tran/</a>
+                </Link>
+              </Text> 
+              <Spacer/>
               <Link href="https://www.linkedin.com/in/joseph-chiu-tran/" isExternal><ExternalLinkIcon color="hsl(256, 28%, 42%)" mx='2px'/> </Link>
-       
           </Box>
-
+          
           <Box align="center" pt="2">
             <Image src="images/contact.png"/>
           </Box>
+        </Box>
         </Section>
     
     </Main>
