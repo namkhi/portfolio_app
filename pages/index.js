@@ -47,8 +47,6 @@ export default function Home() {
           to become a full stack developer ever since.
           <br/> <br/>
           Ultimately, I would like to translate my skills in full stack development and enter the world of machine learning when my technical skills have improved.
-
-
         </Text>
 
         <Box align="center">
@@ -151,6 +149,16 @@ export default function Home() {
               </Text> 
               <Spacer/>
               <Link href="https://www.linkedin.com/in/joseph-chiu-tran/" isExternal><ExternalLinkIcon color="hsl(256, 28%, 42%)" mx='2px'/> </Link>
+          </Box>
+
+          <Box pt="2" display={{md:"flex", base:"flex-box"}}>
+            <Text>GitHub:&nbsp; 
+            <Link href="https://github.com/namkhi" isExternal color="hsl(256, 28%, 42%)">
+                  <a>https://github.com/namkhi</a>
+                </Link>
+            </Text>
+            <Spacer/>
+              <Link href="https://github.com/namkhi" isExternal><ExternalLinkIcon color="hsl(256, 28%, 42%)" mx='2px'/> </Link>
           </Box>
           
           <Box align="center" pt="2">
