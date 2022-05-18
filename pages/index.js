@@ -1,30 +1,47 @@
-import { Container, Box, Text, Heading, Image, Grid, GridItem, Link, useClipboard, IconButton, Spacer, Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverHeader, Flex} from '@chakra-ui/react'
-import { ExternalLinkIcon, CopyIcon } from '@chakra-ui/icons'
-import React, { useState } from 'react'
-import Section from '../components/section'
-import Main from '../components/layouts/main'
+import { VStack, Container, Box, Text, Heading, Image, Grid, GridItem, Link, useClipboard, IconButton, Spacer, Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverHeader, Flex} from '@chakra-ui/react'
+import { ExternalLinkIcon, CopyIcon } from '@chakra-ui/icons';
+import React, { useState } from 'react';
+import Section from '../components/section';
+
+import LandingCard from '../components/landingPage';
+
 
 export default function Home() {
   const [ value, setValue ] = React.useState('chiutran.joseph@gmail.com')
   const {hasCopied, onCopy } = useClipboard(value)
   return (
-    <Main>
 
-        <Box borderRadius="lg" bg="#E2CBD3" p="3" align="center" boxShadow="md">
-          <Text>
-            Welcome to my website!&nbsp;
-            <span>👋</span>
-          </Text>
+
+    <Container minW="100vw" scrollSnapType="y mandatory" overflowY="scroll" h="100vh" w="100vw" alignItems="center" flexDirection="column">
+        <Box h="100vh" scrollSnapAlign="start">
+          <Box borderRadius="lg" bg="#E2CBD3" p="3" align="center" boxShadow="md" >
+            <Heading as="h2">
+              Welcome to my website!&nbsp;
+              <span>👋</span>
+            </Heading>
+            
+          </Box>
+          <Box >
+            <LandingCard delay={0.1}>
+              <video loop muted autoPlay src="/jos_cardo.mp4"/> 
+            </LandingCard>
+          </Box>
+
+          <Box align="center">
+          <Image src="chevron-double-down.png">
+
+          </Image>
+          </Box>
+
         </Box>
-        <video loop muted autoPlay src="/jos_cardo.mp4"/>
 
-
-      <Box borderRadius="lg" pt="5" display={{md:'flex'}}>
+      <Box h="100vh" scrollSnapAlign="start" p="5%">
+      <Box borderRadius="lg" pt="5" display={{md:'flex'}} >
         <Box flexGrow={1}>
-          <Heading as="h2" size="lg" vairant="page-title">
+          <Heading as="h2" size="lg" variant="page-title">
             Phuong Nam (Joseph) Chiu Tran
           </Heading>
-          <Text pt="2">
+          <Text pt="2" fontSize="xl">
             Aspiring full stack developer having fun creating and learning different tech.
           </Text>
         </Box>
@@ -41,12 +58,14 @@ export default function Home() {
           About Myself
         </Heading>
              
-        <Text pt="2">
+        <Text pt="2" fontSize="xl">
           From a young age, my mind was always filled with creative ideas but I was never satisfied by any one medium.  I grew frustrated while realizing these ideas because
           there was always a side of me that wanted to incorporate my innovative ideas as well.  Programming became the medium for expressing these passions and I&apos;ve been working hard 
           to become a full stack developer ever since.
           <br/> <br/>
           Ultimately, I would like to translate my skills in full stack development and enter the world of machine learning when my technical skills have improved.
+          <br/> <br/>
+          Feel free to download my general resume:
         </Text>
 
         <Box align="center">
@@ -55,6 +74,16 @@ export default function Home() {
           
         </Box>
       </Section>
+      </Box>
+
+      <Box h="100vh">
+        <Section delay={0.2}>
+        <Heading as="h3" size="md" variant="section-title" bg="#91D0D7" borderRadius="md" p="2" boxShadow="md">
+            Experience
+          </Heading>
+        </Section>
+
+      </Box>
 
       <Section delay={0.2}>
           <Heading as="h3" size="md" variant="section-title" bg="#91D0D7" borderRadius="md" p="2" boxShadow="md">
@@ -144,7 +173,8 @@ export default function Home() {
             <Box pt="2" display={{md:"flex", base:"flex-box"}}>
               <Text>LinkedIn:&nbsp;
                 <Link href="https://www.linkedin.com/in/joseph-chiu-tran/" isExternal color="hsl(256, 28%, 42%)">
-                  <a>https://www.linkedin.com/in/joseph-chiu-tran/</a>
+                  /in/joseph-chiu-tran
+                  {/* <a>https://www.linkedin.com/in/joseph-chiu-tran/</a> */}
                 </Link>
               </Text> 
               <Spacer/>
@@ -154,7 +184,8 @@ export default function Home() {
           <Box pt="2" display={{md:"flex", base:"flex-box"}}>
             <Text>GitHub:&nbsp; 
             <Link href="https://github.com/namkhi" isExternal color="hsl(256, 28%, 42%)">
-                  <a>https://github.com/namkhi</a>
+              github.com/namkhi
+                  {/* <a>https://github.com/namkhi</a> */}
                 </Link>
             </Text>
             <Spacer/>
@@ -166,7 +197,8 @@ export default function Home() {
           </Box>
         </Box>
         </Section>
+
+    </Container>
     
-    </Main>
   )
 }

@@ -10,7 +10,7 @@ const Main = ({children, router}) => {
                 <link rel="shortcut icon" href="/favicon.ico"/>
             </Head>
 
-            <Container maxW="container.lg" pt={10}>
+            <Container maxW="container.lg" pt={10} scrollSnapType="y mandatory" overflowY="auto">
                 {children}
             </Container>
         </Box>
