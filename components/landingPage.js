@@ -12,8 +12,10 @@ const LandingCard = ({ children, delay = 0}) => (
         initial={{scale:2, opacity: 0}}
         animate={{scale:1, opacity: 1}}
         transition={{duration: 1.2, delay}}
-        mb={1}>
-            {children}
+        mb={1}
+        maxW="1200px">
+        {children}
+            
     </StyledDiv>
 )
 

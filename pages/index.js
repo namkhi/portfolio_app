@@ -1,9 +1,10 @@
-import { VStack, Container, Box, Text, Heading, Image, Grid, GridItem, Link, useClipboard, IconButton, Spacer, Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverHeader, Flex} from '@chakra-ui/react'
+import { Container, Box, Text, Heading, Image, Grid, GridItem, Link, useClipboard, IconButton, Spacer, Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverHeader} from '@chakra-ui/react'
 import { ExternalLinkIcon, CopyIcon } from '@chakra-ui/icons';
 import React, { useState } from 'react';
 import Section from '../components/section';
 
 import LandingCard from '../components/landingPage';
+import SnapSection from '../components/snapSection';
 
 
 export default function Home() {
@@ -13,15 +14,15 @@ export default function Home() {
 
 
     <Container minW="100vw" scrollSnapType="y mandatory" overflowY="scroll" h="100vh" w="100vw" alignItems="center" flexDirection="column">
-        <Box h="100vh" scrollSnapAlign="start">
+        <SnapSection>
           <Box borderRadius="lg" bg="#E2CBD3" p="3" align="center" boxShadow="md" >
-            <Heading as="h2">
+            <Text fontSize="2xl">
               Welcome to my website!&nbsp;
               <span>👋</span>
-            </Heading>
+            </Text>
             
           </Box>
-          <Box >
+          <Box align="center">
             <LandingCard delay={0.1}>
               <video loop muted autoPlay src="/jos_cardo.mp4"/> 
             </LandingCard>
@@ -33,12 +34,12 @@ export default function Home() {
           </Image>
           </Box>
 
-        </Box>
+        </SnapSection>
 
-      <Box h="100vh" scrollSnapAlign="start" p="5%">
+      <SnapSection>
       <Box borderRadius="lg" pt="5" display={{md:'flex'}} >
         <Box flexGrow={1}>
-          <Heading as="h2" size="lg" variant="page-title">
+          <Heading as="h2" size="2xl" variant="page-title">
             Phuong Nam (Joseph) Chiu Tran
           </Heading>
           <Text pt="2" fontSize="xl">
@@ -47,14 +48,14 @@ export default function Home() {
         </Box>
 
         <Box flexShrink={0} mt={{base:4, md: 0}} mb={{base:4, md: 2}} ml={{ md: 6 }} align="center" >
-          <Image borderColor="hsl(256, 28%, 58%)" borderWidth={2} borderStyle="solid" maxWidth="160px" display="inline-block" borderRadius="full" src="/images/joseph.jpg"/>
+          <Image borderColor="hsl(256, 28%, 58%)" borderWidth={2} borderStyle="solid" maxWidth="180px" display="inline-block" borderRadius="full" src="/images/joseph.jpg"/>
         </Box>
       </Box>
 
       <Section delay={0.1}>
         <Box pt="1" display={{md:'flex-box'}}>
         
-        <Heading as="h3" size="md" variant="section-title" bg="#91D0D7" borderRadius="md" p="2" boxShadow="md">
+        <Heading as="h3" size="lg" variant="section-title" bg="#91D0D7" borderRadius="md" p="2" boxShadow="md">
           About Myself
         </Heading>
              
@@ -65,7 +66,7 @@ export default function Home() {
           <br/> <br/>
           Ultimately, I would like to translate my skills in full stack development and enter the world of machine learning when my technical skills have improved.
           <br/> <br/>
-          Feel free to download my general resume:
+          Feel free to download my general resume: <Link href="public/Phuong_Nam_Chiu_Tran_2022_Resume.pdf">Resume</Link>
         </Text>
 
         <Box align="center">
@@ -74,17 +75,53 @@ export default function Home() {
           
         </Box>
       </Section>
-      </Box>
+      </SnapSection>
 
-      <Box h="100vh">
-        <Section delay={0.2}>
-        <Heading as="h3" size="md" variant="section-title" bg="#91D0D7" borderRadius="md" p="2" boxShadow="md">
+      <SnapSection h="100vh">
+      <Section delay={0.2}>
+        <Heading as="h3" size="lg" variant="section-title" bg="#91D0D7" borderRadius="md" p="2" boxShadow="md">
+            Education
+        </Heading>
+          <Box borderRadius="lg" p="2" display={{md:'flex-box'}}>
+            <Heading as="h2" size="md">
+                Toronto Metropolitan University (formerly Ryerson University)
+            </Heading>
+            <Heading as="h3" size="sm" pt="2" pb="3" color="hsl(256, 28%, 51%)">
+                  Bachelor of Science (Honours), 2019-2024
+                </Heading>
+            <Text fontSize="xl">
+              Computer Science with a concentration in Software Education Engineering
+            </Text>
+            
+          </Box>
+          
+      </Section>
+
+      <Section delay={0.2}>
+        <Heading as="h3" size="lg" variant="section-title" bg="#91D0D7" borderRadius="md" p="2" boxShadow="md">
             Experience
-          </Heading>
-        </Section>
+        </Heading>
 
-      </Box>
+        <Grid templateRows="repeat(auto)" templateColumns={{md:"repeat(2, 1fr)"}} gap="4" pt="4">
+          <GridItem borderRadius="lg" p="2" display={{md:'flex-box'}}>
+          <Heading as="h2" size="md">
+                IT Architect, ORNGE
+              </Heading>
+                <Heading as="h3" size="sm" pt="2" pb="3" color="hsl(256, 28%, 51%)">
+                  May 2021 - August 2021
+                </Heading>
+                <Text>
+                  Worked on every phase of the development cycle with a small team, from requirements and documentation (UML modelling) to design, implementation and testing.
+                </Text>
+          </GridItem>
+          <GridItem bg="#f3f1f1" borderRadius="lg" p="2" display={{md:'flex-box'}}>
 
+          </GridItem>
+        </Grid>
+      </Section>
+
+      </SnapSection>
+      <SnapSection>
       <Section delay={0.2}>
           <Heading as="h3" size="md" variant="section-title" bg="#91D0D7" borderRadius="md" p="2" boxShadow="md">
             Projects
@@ -106,10 +143,22 @@ export default function Home() {
 
             <GridItem borderRadius="lg" p="2" display={{md:'flex-box'}}>
               <Heading as="h2" size="sm">
+                Team Project: Online Phone Store
+              </Heading>
+              <Heading as="h3" size="xs" pt="2" pb="3" color="hsl(256, 28%, 50%)">
+                  AngularJS, JavaScript, JQuery, MySQL, PHP
+                </Heading>
+              <Text>
+                A webapp project implemnented in two iterations, one without the use of a framework and the second being the refactor of the first into a javascript framework, this being the second iteration in AngularJS.  We gained exposure to different web technologies and an introduction of the power that web frameworks hold.</Text>
+            </GridItem>
+              
+
+            <GridItem borderRadius="lg" p="2" display={{md:'flex-box'}}>
+              <Heading as="h2" size="sm">
                 Team Project: Online Merchandising Website
               </Heading>
               <Heading as="h3" size="xs" pt="2" pb="3" color="hsl(256, 28%, 50%)">
-                  AngularJS, MySQL, PHP
+                  Angular, MySQL, PHP
                 </Heading>
               <Text>
               Implemented front-end of webpages to be fully responsive. Established website&apos;s structure and routing using Angular Framework. Implemented the navigation bar and footer of the main page.
@@ -146,11 +195,12 @@ export default function Home() {
           </Box>
           
         </Section>
-
+      </SnapSection>
+      <SnapSection>
         <Section delay={0.3}>
         <Box pt="1" display={{md:'flex-box'}}>
           <Heading as="h3" size="md" variant="section-title" bg="#91D0D7" borderRadius="md" p="2" boxShadow="md">
-            Contacts
+            Contacts & Links
           </Heading>
 
           <Box pt="2" display={{md:"flex", base:"flex-box"}}>
@@ -197,7 +247,7 @@ export default function Home() {
           </Box>
         </Box>
         </Section>
-
+        </SnapSection>
     </Container>
     
   )
