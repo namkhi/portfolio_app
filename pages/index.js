@@ -66,7 +66,7 @@ export default function Home() {
           <br/> <br/>
           Ultimately, I would like to translate my skills in full stack development and enter the world of machine learning when my technical skills have improved.
           <br/> <br/>
-          Feel free to download my general resume: <Link href="public/Phuong_Nam_Chiu_Tran_2022_Resume.pdf">Resume</Link>
+          Feel free to download my general resume: <Link href="/Phuong_Nam_Chiu_Tran_2022_Resume.pdf">Resume</Link>
         </Text>
 
         <Box align="center">
