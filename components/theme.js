@@ -1,15 +1,9 @@
-import { extendedTheme } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react';
 
-const theme = extendedTheme({
-    layerStyles: {
-        base:{
-
-        },
-
-    },
+const theme = extendTheme({
     textStyles:{
 
-    }
+    },
 
 })
 export default theme;
